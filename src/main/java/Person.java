@@ -2,8 +2,8 @@ import java.util.OptionalInt;
 
 public class Person {
     protected final String name;
-    protected  final  String surname;
-    protected   OptionalInt age;
+    protected final String surname;
+    protected OptionalInt age;
     public String address;
 
     public Person(String name, String surname) {
@@ -42,19 +42,19 @@ public class Person {
         return address;
     }
 
-    public boolean hasAge () {
+    public boolean hasAge() {
         return this.age.isPresent();
     }
 
-    public boolean hasAddress () {
+    public boolean hasAddress() {
         return this.address != null;
     }
 
-    public void birthday () {
+    public void birthday() {
         this.age = OptionalInt.of(this.age.getAsInt() + 1);
     }
 
-    public PersonBuilder newChildBuilder () {
+    public PersonBuilder newChildBuilder() {
         return new PersonBuilder()
                 .setSurname(this.surname)
                 .setAge(0)
